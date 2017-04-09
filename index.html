@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">                                                                                     
+   
+	<head>      
+		<meta charset="utf-8" />    
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title> Cloud Computing </title>
+			
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<!-- My CSS stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/perso.css">
+	
+	</head>
+	
+	<body>
+	
+		<!-- Image Header -->
+		<img src="images/banner2.png" class="img-responsive" alt="Responsive image" >.
+	
+		<div class="container-fluid" >
+			
+			<!-- 2 Top blocs -->
+			<form>
+				<div class="row" style="margin:-1em 2em -1em 2em;">
+					<!-- Bloc Top Left -->
+					<div class="col-md-6">
+							<div class="form-group">
+								<label for="inputURL">URL</label>
+								<input type="text" class="form-control" id="inputURL" placeholder="URL" oninput="UrlFunction()">
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" value="domain"> Allow domain escape </br>
+									<input type="checkbox" value="subdomain"> Allow subdomain escape
+								</label>
+							</div>
+					</div>
+					<!-- Bloc Top Right -->
+					<div class="col-md-6">
+							<div class="form-group">
+								<label for="inputStorage">HDFS storage</label>
+								<input type="file" class="form-control" id="inputStorage" placeholder="PATH"> </br>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" value="drop"> Drop if it exist
+								</label>
+							</div>
+					</div>
+				</div>
+			
+			<!-- URL preview  -->
+			<iframe class="frame" id="output" >	</iframe>
+			
+			<!-- Bloc Regexp -->
+				<div class="row" style="margin:0.5em 2em 0 2em;">
+					<!-- Key -->
+					<div class="col-md-1">
+						<div class="form-group">
+							<label for="key">Key : </label>
+							</br>
+							<input type="text" id="key" value="1" class="form-control">
+						</div>
+					</div>
+					<!-- Regular Expression -->
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="regexp">Regular Expression : </label>
+							<input type="text" class="form-control" id="regexp" placeholder="Add a new regexp">
+						</div>
+					</div>
+					<!-- Add Button -->
+					<div class="col-md-1" style="padding-top:2em;">
+						<input type="button" value="Add" onclick="addFunction(); test()"> 
+					</div>
+					<!-- List -->
+					<div class="col-md-6">
+						<div class="form-group table-responsives table-striped" ">
+							<table id="table" class="table">
+								<tr>
+									<th> Key </th>
+									<th> Regexp </th>
+									<th> Delete </th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+			<!-- Bouton RUN -->
+			<div class="row"  style="margin:1em 2em 1em 2em;">
+				<div class="col-md-4 col-md-offset-4">
+					<button type="submit" class="btn btn-primary btn-lg btn-block">RUN</button>
+				</div>
+			</div>
+			
+			<!-- Results -->
+			<div class="row" style="margin:2em 2em 3em 2em;">
+				<div class="col-md-1">
+					<label for="page">Page : </label>
+				</div>
+				<div class="col-md-5">
+					<input type="text" id="page"  class="form-control">
+				</div>
+				<div class="col-md-1">
+					<label for="row">Rows : </label>
+				</div>
+				<div class="col-md-5">
+					<input type="text" id="row" class="form-control">
+				</div>
+			</div>
+			
+			</form>
+		</div>
+		
+	</body>
+	
+	<!-- Script URL preview + Regexp -->
+	<script type="text/javascript" src="js/perso.js"></script>
+	
+</html>
